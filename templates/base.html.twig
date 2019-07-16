@@ -8,20 +8,30 @@
 		{% endblock %}
 	</head>
 	<body>
-		<div class="container-fluid ">
-			<div id="navbar" class="col-12">
-				<p class="">Jean Michel Tatout</p>
-				<p>Développeur Web</p>
+		<div class="container-fluid  p-0">
+			<div id="navbar" class="col-12 d-flex flex-md-row py-2">
+				<div class="px-2"><i class="fas fa-laptop-code"></i></div>
 			</div>
-			<div class="row">
-				<div class="col-12 col-md-3"></div>
-				<div class="col-12 col-md-9">
+			<div class="row m-0">
+				<div id="sidebar"class="col-12 col-md-2">
+					<div class="d-flex justify-content-between">
+						<div><i class="fas fa-bars"></i></div>
+						<div><i class="fas fa-sign-in-alt"></i></div>
+					</div>
+					<div>
+						<ul>
+							<li><a href=""></a>								
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-12 col-md-10">
 					{% block body %}{% endblock %}
 				</div>
 			</div>
 		</div>
 		{% block javascripts %}
-			{ encore_entry_script_tags('app') }
+			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</body>
 </html>

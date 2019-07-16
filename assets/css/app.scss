@@ -1,5 +1,18 @@
 @import "~bootstrap/scss/bootstrap";
+@import '~@fortawesome/fontawesome-free/scss/solid';
 
 body {
-    background-color: lightgray;
+    background-color: #e1e2e1;
+}
+
+#navbar{
+	background-color: #ba000d;
+	color: white;
+	font-size: 2rem;
+	height: 7vh;
+}
+
+#sidebar{
+	height:93vh;
+	background-color:#f44336;
 }
