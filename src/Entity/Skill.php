@@ -13,9 +13,9 @@ class Skill
 {
 
     const SKILL_TYPE = [
-        'soft',
-        'hard',
-        'tool'
+        'soft'=>'soft',
+        'hard'=>'hard',
+        'tool'=>'tool'
     ];
     
     /**
