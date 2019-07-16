@@ -10,5 +10,9 @@ const $ = require('jquery');
 require('bootstrap');
 require('@fortawesome/fontawesome-free/css/all.min.css');
 
+$(document).ready(function () {
+    $('#myModal').modal('show')
+});
+
 
 
