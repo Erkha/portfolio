@@ -12,8 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Skill
 {
 
-    const SKILL_TYPE =
-    [soft,hard,tool];
+    const SKILL_TYPE = [
+        'soft',
+        'hard',
+        'tool'
+    ];
     
     /**
      * @ORM\Id()

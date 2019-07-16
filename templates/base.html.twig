@@ -19,10 +19,25 @@
 						<div><i class="fas fa-sign-in-alt"></i></div>
 					</div>
 					<div>
-						<ul>
-							<li><a href=""></a>								
-							</li>
-						</ul>
+						<ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">admin</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="{{ path('file_index') }}">fichiers</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('skill_index') }}">compétences</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('project_index') }}">projets</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('experience_index') }}">expériences</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
 					</div>
 				</div>
 				<div class="col-12 col-md-10">

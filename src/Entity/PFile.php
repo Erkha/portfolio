@@ -26,6 +26,11 @@ class PFile
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project", inversedBy="pictures")
+     */
+    private $project;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class PFile
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getProject(): ?Project
+    {
+        return $this->project;
+    }
+
+    public function setProject(?Project $project): self
+    {
+        $this->project = $project;
 
         return $this;
     }

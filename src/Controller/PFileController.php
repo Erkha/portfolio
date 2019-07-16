@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
- * @Route("admin/file")
+ * @Route("/admin/file")
  */
 class PFileController extends AbstractController
 {
