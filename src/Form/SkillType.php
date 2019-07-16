@@ -24,8 +24,6 @@ class SkillType extends AbstractType
         'class' => PFile::class,
         'choice_label' => 'name',
             ]);
-
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
