@@ -10,12 +10,12 @@ body {
 	background-color: #ef5350;
 	color: white;
 	font-size: 2rem;
-	height: 7vh;
+
 	font-family: 'Leckerli One', cursive;
 }
 
 #sidebar{
-	height:93vh;
+
 	background-color:#ff867c;
 	color:black;
 }
@@ -32,8 +32,34 @@ a, a:hover, a:focus {
 }
 
 .card-title{
-	background-color: #ff867c;
+	background-color: #ef5350;
 	color: white;
 	font-weight: bold;
 	font-size: 1.2rem;
+}
+
+.accordion .card-header{
+	background-color:#ff867c !important ;
+}
+
+.accordion button{
+	color: white;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.skill {
+	font-size:0.8rem ; 
+	background-color: transparent ;
+	color: black;
+
+}
+
+@media (min-width: 768px) {
+	#navbar{
+			height: 7vh;
+	}
+	#sidebar{
+			height:93vh;
+	}
 }
