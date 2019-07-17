@@ -3,12 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Project;
+use App\Entity\PFile;
 use App\Form\ProjectType;
 use App\Repository\ProjectRepository;
+use App\Repository\PFileRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 
 /**
  * @Route("/admin/project")
@@ -91,5 +95,51 @@ class ProjectController extends AbstractController
         }
 
         return $this->redirectToRoute('project_index');
+    }
+
+    /**
+     * @Route("/picture_add/{picture_id}/{project_id}", name="add_picture", methods={"GET","POST"})
+     * @Entity("project", expr="repository.find(project_id)")
+     * @Entity("pFile", expr="repository.find(picture_id)")
+     */
+    public function addPictureByProject(
+        ProjectRepository $projectRepo,
+        Request $request,
+        PFile $pFile,
+        Project $project
+    ): Response {
+        $project->addPicture($pFile);
+        $this->getDoctrine()->getManager()->flush();
+        return $this->redirectToRoute('project_pictures', [
+                'id' => $project->getId() ]);
+    }
+
+    /**
+     * @Route("/picture_remove/{picture_id}/{project_id}", name="remove_picture", methods={"GET","POST"})
+     * @Entity("project", expr="repository.find(project_id)")
+     * @Entity("pFile", expr="repository.find(picture_id)")
+     */
+    public function removePictureByProject(
+        ProjectRepository $projectRepo,
+        Request $request,
+        PFile $pFile,
+        Project $project
+    ): Response {
+        $project->removePicture($pFile);
+        $this->getDoctrine()->getManager()->flush();
+        return $this->redirectToRoute('project_pictures', [
+                'id' => $project->getId() ]);
+    }
+
+    /**
+
+     * @Route("/pictures/{id}", name="project_pictures", methods={"GET","POST"})
+     */
+    public function indexPicturesByProject(PFileRepository $pFileRepo, Project $project): Response
+    {
+        return $this->render('/project/picturesByProject.html.twig', [
+                'pictures' => $pFileRepo->findAll(),
+                'project' => $project
+        ]);
     }
 }

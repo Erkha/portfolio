@@ -18,14 +18,15 @@ class ExperienceType extends AbstractType
     {
         $builder
             ->add('startDate', DateType::class, [
-                'label' => 'Date de Création',
+                'label' => 'Début',
                 'widget' => 'single_text',
                 'html5'  => true
             ])
             ->add('endDate', DateType::class, [
-                'label' => 'Date de Création',
+                'label' => 'Fin',
                 'widget' => 'single_text',
-                'html5'  => true
+                'html5'  => true,
+                'required'=> false
             ])
             ->add('title')
             ->add('company')

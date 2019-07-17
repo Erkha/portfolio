@@ -1,0 +1,65 @@
+{% extends 'adminBase.html.twig' %}
+
+{% block title %}pictures project{% endblock %}
+{% block body2 %}
+     <div class="title px-4 pb-4 pt-2"><h1>Images du projet : {{project.title}}</h1>
+        </div>
+     <div class="container">
+<a href="{{ path('project_index') }}"><button class="btn btn-primary m-2"> Retourner à la liste des projets</button>   </a>  
+    <div class="jumbotron py-2 my-1">
+        <h2> Images liées</h2>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>titre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for picture in project.pictures %}
+                <tr>
+                    <td> {{ picture.name }} </td>
+
+                    <td>
+                        <a href="{{ path('remove_picture', {project_id: project.id , picture_id: picture.id}) }}"> <button class="btn btn-secondary">Retirer </button>  </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="11">no records found</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="jumbotron py-2 mb-1">
+        <h2>Liste des images disponibles</h2>
+        
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>titre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for picture in pictures %}
+                {% if picture  not in project.pictures %}
+                    <tr>
+
+                        <td>{{ picture.name }}</td>
+                        <td>
+                            <a href="{{ path('add_picture', {project_id: project.id , picture_id: picture.id}) }}"><button class="btn btn-secondary">ajouter</button></a>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% else %}
+                <tr>
+                    <td colspan="11">no records found</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
