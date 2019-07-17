@@ -6,16 +6,21 @@
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet"> 
 	</head>
 	<body>
 		<div class="container-fluid  p-0">
-			<div id="navbar" class="col-12 d-flex flex-md-row py-2">
-				<div class="px-2"><a href="{{path('app_login')}}"><i class="fas fa-laptop-code"></i></a></div>
+			<div id="navbar" class="col-12 d-flex flex-md-row py-2 align-items-center justify-content-center">
+				<div class="px-3">Jean Michel Tatout</div>
+				<div class="px-3"><a href="{{path('app_login')}}"><i class="fas fa-laptop-code"></i></a></div>
+				<div class="px-3">Developpeur Web</div>
 			</div>
 			<div class="row m-0">
 				<div id="sidebar"class="col-12 col-md-2">
 					<div class="d-flex justify-content-between">
 						<div><i class="fas fa-bars"></i></div>
+
 						<div>
 							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 								<a href="{{path('app_logout')}}"><i class="fas fa-sign-out-alt"></i></a>
@@ -23,6 +28,9 @@
 								<i class="fas fa-sign-in-alt"></i>
 							{% endif %}
 						</div>
+					</div>
+					<div>
+						<img src="" alt="" class="img-fluid">	
 					</div>
 					<div>
 						<ul class="list-unstyled components">
@@ -48,9 +56,9 @@
                 </ul>
 					</div>
 				</div>
-				<div class="col-12 col-md-10">
+				
 					{% block body %}{% endblock %}
-				</div>
+					
 			</div>
 		</div>
 		{% block javascripts %}

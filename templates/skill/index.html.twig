@@ -1,8 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}Skill index{% endblock %}
 
-{% block body %}
+{% block body2 %}
+    
     <h1>Skill index</h1>
 
     <table class="table">
@@ -34,4 +35,5 @@
     </table>
 
     <a href="{{ path('skill_new') }}">Create new</a>
+</div>
 {% endblock %}
