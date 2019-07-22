@@ -6,6 +6,15 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+@media (min-width: 768px) {
+	#navbar{
+			height: 7vh;
+	}
+	#sidebar{
+			height:93vh;
+	}
+}
+
 #navbar{
 	background-color: #ef5350;
 	color: white;
@@ -18,24 +27,23 @@ body {
 	background-color:#ff867c;
 	color:white;
 	font-weight:bold;
-	font-size:1.4rem;
+	font-size:1.2rem;
 }
 
 #sidebar p{
 	color: darkslategray;
 	font-weight:normal;
-	font-size: 1	rem;
+	font-size: 1rem;
 }
 
-a, a:hover, a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
+#content{
+	background-image: url("/uploads/files/computerBg.jpg");	
+	background-size: cover;
 }
 
 .card{
-	background-color:#f5f5f6;
 	height:100%;
+	background-color: transparent;
 }
 
 .card-title{
@@ -43,6 +51,10 @@ a, a:hover, a:focus {
 	color: white;
 	font-weight: bold;
 	font-size: 1.2rem;
+}
+
+.card-item{
+	background-color: #d5d5d5;
 }
 
 .accordion .card-header{
@@ -56,20 +68,12 @@ a, a:hover, a:focus {
 }
 
 .skill {
+	background-color: #ff867c ;
 	font-size:0.8rem ; 
-	background-color: transparent ;
 	color: black;
 
 }
 
-@media (min-width: 768px) {
-	#navbar{
-			height: 7vh;
-	}
-	#sidebar{
-			height:93vh;
-	}
-}
 
 .experience{
 	background-color: #ff867c;
