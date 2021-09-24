@@ -1,5 +1,5 @@
 **1er portfolio réalisé à WCS**
-#Installation
+# Installation
 * cloner le projet depuis github
 * composer install
 * yarn install
